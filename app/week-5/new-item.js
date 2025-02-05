@@ -46,6 +46,7 @@ export default function newItem(){
                 <select 
                     id="category" 
                     name="category" 
+                    value={category}
                     placeholder={category} 
                     onChange={(event) => setCategory(event.target.value)}
                     className="w-full px-3 py-2 border rounded-lg text-black">
