@@ -20,9 +20,9 @@ export default function newItem(){
             </div>
             <div className="flex space-x-2 m1-4">
                 <button onClick = {increment}
-                    className={`rounded-lg w-6 text-center ${quantity == 20? 'bg-gray-300' : 'bg-green-500'}`}>➕</button>
+                    className={`rounded-lg w-6 text-center ${quantity >= 20 ? 'bg-gray-300' : 'bg-green-500'}`}>➕</button>
                 <button onClick = {decrement} 
-                    className={`rounded-lg bg-red-500 w-6 text-center ${quantity == 1 ? 'bg-gray-300' : 'bg-red-500'}`}>➖</button>
+                    className={`rounded-lg w-6 text-center ${quantity <= 1 ? 'bg-gray-300' : 'bg-red-500'}`}>➖</button>
             </div>
         </div>
     );
