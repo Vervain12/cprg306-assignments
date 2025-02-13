@@ -26,6 +26,7 @@ export default function ItemList ({ items }){
 
     let itemList = sortedItems.map(item => 
         <Item
+            key={item.id}
             id={item.id}
             name={item.name}
             quantity={item.quantity}

@@ -14,7 +14,7 @@ export default function ItemList (){
     const sortByCategory = () => {
         setSortBy("category")
     }
-    
+
     const sortedItems =[...items].sort((a, b) => {
         if (sortBy === "name") {
             return a.name.localeCompare(b.name);
@@ -26,6 +26,7 @@ export default function ItemList (){
 
     let itemList = sortedItems.map(item => 
         <Item
+            key={item.id}
             id={item.id}
             name={item.name}
             quantity={item.quantity}
