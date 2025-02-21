@@ -46,9 +46,6 @@ export default function MealIdeas( {ingredient} ) {
                 const mealList = await fetchMealIdeas(ingredient);
                 setMeals(mealList || []);
             }
-            else {
-                setMeals([]);
-            }
         }
         loadMeals();
     }, [ingredient]);
@@ -58,9 +55,6 @@ export default function MealIdeas( {ingredient} ) {
             if (selectedMealId) {
                 const mealIngredients = await fetchMealIngredients(selectedMealId);
                 setIngredients(mealIngredients || []);                
-            }
-            else {
-                setIngredients([]);
             }
         }
         loadIngredients();
