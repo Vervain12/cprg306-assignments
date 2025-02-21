@@ -36,7 +36,7 @@ export default function ItemList (){
     return (
         <div>
             <div className="flex items-center gap-4 m-4 max-w-sm">
-                <text className="text-pink-300">Sort By:</text>
+                <div className="text-pink-300">Sort By:</div>
                 <button onClick={sortByName} type="button"
                     className={`px-4 py-1 text-black text-sm font-semibold transition-colors ${sortBy === "name" ? 'bg-pink-300' : 'bg-gray-300'}`}>Name</button>
                 <button onClick={sortByCategory} type="button"

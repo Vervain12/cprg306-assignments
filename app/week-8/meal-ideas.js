@@ -85,7 +85,6 @@ export default function MealIdeas( {ingredient} ) {
                                 )}
                             </li>))) : 
                         (<li className="flex flex-col text-pink-400 font-bold bg-black m-4 p-2 max-w-sm">No meal ideas found for {ingredient}</li>)}
-
             </ol>
         </div>
     )
