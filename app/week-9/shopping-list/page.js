@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import ItemList from "./item-list"
 import NewItem from "./new-item"
@@ -12,19 +12,11 @@ export default function Page(){
 
     const[items, setItems] = useState(itemsData);
     const[selectedItemName, setSelectedItemName] = useState("");
-    const router = useRouter();
     const { user } = useUserAuth();
 
     const handleAddItem = (newItem) => {
         setItems((prevData) => [...prevData, newItem]);
     }
-
-    useEffect(() => {
-        if (!user) {
-            router.push("localhost:3000");
-        }
-    }, [user, router])
-    
 
     function cleanItemName() {
         let newItemName = selectedItemName.split(",")[0];
