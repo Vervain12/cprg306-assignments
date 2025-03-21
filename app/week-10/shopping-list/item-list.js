@@ -5,8 +5,6 @@ import Item from "./item";
 
 export default function ItemList ({ items, setSelectedItem }){
 
-    console.log(items);
-
     const [sortBy, setSortBy] = useState("name");
 
     let itemsArray = [...items];

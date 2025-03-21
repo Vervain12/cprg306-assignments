@@ -8,20 +8,11 @@ export default function NewItem({ onAddItem }){
     const [quantity, setQuantity] = useState(1);
     const [category, setCategory] = useState("produce");
 
-    function generateId() {
-        let id = '';
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        for (let i = 0; i < 18; i++){
-            id += characters.charAt(Math.floor(Math.random() * characters.length));
-        }
-        return id;
-    }
-
     const handleSubmit = (event) => {
         if (name.trim() != ""){
             event.preventDefault();
 
-            const newItem = {id: generateId(), name, quantity, category };
+            const newItem = { name, quantity, category };
             onAddItem(newItem);
 
             setName("");

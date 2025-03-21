@@ -17,7 +17,7 @@ export default function Page(){
     const loadItems = async () => {
         if (user){
             const fetched = await getItems(user.uid);
-            setItems(fetched);    
+            setItems(fetched);
         }
     }
 
@@ -26,8 +26,9 @@ export default function Page(){
     },[user])
 
     const handleAddItem = async (newItem) => {
-        await addItem(user.uid, newItem);
-        setItems((prevData) => [...prevData, newItem]);
+        const itemId = await addItem(user.uid, newItem);
+        const newItemWithId = {id: itemId, ...newItem}
+        setItems((prevData) => [...prevData, newItemWithId]);
         loadItems();
     }
 
