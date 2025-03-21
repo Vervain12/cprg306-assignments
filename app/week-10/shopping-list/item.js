@@ -10,3 +10,5 @@ export default function Item({ id, name, quantity, category, itemSelect }){
         </li>
     );
 };
+
+// Call delete in a button here

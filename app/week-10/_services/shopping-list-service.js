@@ -17,3 +17,8 @@ export const addItem = async (userId, item) => {
     const docRef = await addDoc(collection(db, "users", userId, "items"), item);
     return docRef.id;
 };
+
+//Delete Function
+//Click button inside of item
+//Button calls delete here, passes userId and itemId
+// await deleteDoc(doc(db, "users", userId, "items", itemId));
