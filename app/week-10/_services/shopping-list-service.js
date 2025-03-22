@@ -1,5 +1,5 @@
 import { db } from "../_utils/firebase";
-import { collection, getDocs, addDoc, query } from "firebase/firestore";
+import { collection, getDocs, addDoc, deleteDoc, query, doc } from "firebase/firestore";
 
 export const getItems = async (userId) => {
     const items = [];
@@ -18,7 +18,6 @@ export const addItem = async (userId, item) => {
     return docRef.id;
 };
 
-//Delete Function
-//Click button inside of item
-//Button calls delete here, passes userId and itemId
-// await deleteDoc(doc(db, "users", userId, "items", itemId));
+export const deleteItem = async (userId, itemId) => {
+    await deleteDoc(doc(db, "users", userId, "items", itemId))
+}
